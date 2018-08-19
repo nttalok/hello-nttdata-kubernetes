@@ -1,9 +1,12 @@
 //Jenkinsfile
-hello-nttdata {
+node {
 	stage('setup k8s') {
 		println("k8s setup done")
 	}
-	
+	stage('Clone repository') {
+
+        checkout scm
+    }
 	stage('integrationTest') {
 	 
 		withKubeConfig([serverUrl: 'https://10.91.177.119:6443']) {
