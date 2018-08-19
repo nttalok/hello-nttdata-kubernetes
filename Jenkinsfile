@@ -12,7 +12,7 @@ node {
 	 
 		withKubeConfig([credentialsId: 'k8s-caas-demo-config',serverUrl: 'https://10.91.177.119:6443']) {
 		  
-			 sh 'kubectl apply -f hello-ntt-data.yaml --namespace=caas-demo-test'
+			 sh 'kubectl apply -f ./ --namespace=caas-demo-test'
 			 println("pod deployed")
 			 println("Integration done, Cleaning deployment")
 			 sh 'kubectl delete -f hello-ntt-data.yaml --namespace=caas-demo-test'
