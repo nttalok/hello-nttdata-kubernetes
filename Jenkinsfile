@@ -5,7 +5,8 @@ node {
 	}
 	stage('Clone repository') {
 
-        checkout scm
+        // clone git repo
+		git url:'https://github.com/nttalok/hello-nttdata-kubernetes.git'
     }
 	stage('integrationTest') {
 	 
