@@ -9,7 +9,7 @@ node {
     }
 	stage('integrationTest') {
 	 
-		withKubeConfig([credentialsId: 'caas-demo',serverUrl: 'https://10.91.177.119:6443']) {
+		withKubeConfig([credentialsId: 'k8s-caas-demo-config',serverUrl: 'https://10.91.177.119:6443']) {
 		  
 			 sh 'kubectl apply -f hello-ntt-data.yaml --namespace=caas-demo-test'
 			 println("pod deployed")
